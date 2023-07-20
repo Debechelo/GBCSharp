@@ -8,13 +8,20 @@
 Console.WriteLine("Введите натуральное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-// for(int i = -number; i <= number; i++){
-//     Console.Write($"{i} ");
-// }
-
-int count = -number;
-while(count <= number)
+if (number <= 0)
 {
-    Console.Write($"{count} ");
-    count++;
+    Console.WriteLine("Число не натуральное");
+}
+else
+{
+    // for(int i = -number; i <= number; i++){
+    //     Console.Write($"{i} ");
+    // }
+
+    int count = -number;
+    while (count <= number)
+    {
+        Console.Write($"{count} ");
+        count++;
+    }
 }
