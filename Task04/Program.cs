@@ -14,8 +14,26 @@ int c = Convert.ToInt32(Console.ReadLine());
 
 Console.Write("Наибольшее из трех чисел: ");
 
-if (a > b && a > c)
-    Console.WriteLine(a);
-else if (b > a && b > c)
-    Console.WriteLine(b);
-else Console.WriteLine(c);
+// if (a > b)
+// {
+//     if (a > c)
+//         Console.WriteLine(a);
+//     else
+//         Console.WriteLine(c);
+// }
+// else
+// {
+//     if (b > c)
+//         Console.WriteLine(b);
+//     else
+//         Console.WriteLine(c);
+// }
+
+
+int max = a;
+if (b > max)
+    max = b;
+if (c > max)
+    max = c;
+
+Console.Write($"Наибольшее из трех чисел: {max}");

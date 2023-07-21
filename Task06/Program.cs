@@ -9,7 +9,8 @@
 Console.Write("Введите целое число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
+Console.Write("Число четное: ");
 if (number % 2 == 0)
-    Console.WriteLine("Четное");
+    Console.WriteLine("Да");
 else
-    Console.WriteLine("Нечетное");
+    Console.WriteLine("Нет");
