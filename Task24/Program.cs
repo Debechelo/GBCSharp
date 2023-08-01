@@ -20,9 +20,7 @@ int SumNumbers(int num)
         {
             sum += i; // sum = sum + i
         }
-        unchecked{
-            
-        }
+        unchecked{}
     }
     return sum;
 }
