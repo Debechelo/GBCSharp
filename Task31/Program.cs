@@ -24,10 +24,11 @@ void PrintArray(int[] arr)
     Console.Write("[");
     for (int i = 0; i < arr.Length; i++)
     {
-        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
-        else Console.Write($"{arr[i]}");
+        Console.Write(arr[i]);
+        if (i < arr.Length - 1)
+            Console.Write(", "); 
     }
-    Console.Write("]");
+    Console.WriteLine("]");
 }
 
 int[] array = CreateArrayRndInt(12, -9, 9);
@@ -38,7 +39,8 @@ int GetSumPositiveElem(int[] arr)
     int sum = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr[i] > 0) sum += arr[i];
+        if (arr[i] > 0)
+            sum += arr[i];
     }
     return sum;
 }
@@ -48,7 +50,8 @@ int GetSumNegativeElem(int[] arr)
     int sum = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr[i] < 0) sum += arr[i];
+        if (arr[i] < 0) 
+            sum += arr[i];
     }
     return sum;
 }

@@ -2,10 +2,6 @@
 // массива: положительные элементы замените на
 // соответствующие отрицательные, и наоборот.
 // [-4, -8, 8, 2] -> [4, 8, -8, -2]
-// Задача 33: Задайте массив. Напишите программу, которая
-// определяет, присутствует ли заданное число в массиве.
-// 4; массив [6, 7, 19, 345, 3] -> нет
-// 3; массив [6, 7, 19, 345, 3] -> да
 
 int[] CreateArrayRndInt(int size, int min, int max)
 {
@@ -16,6 +12,7 @@ int[] CreateArrayRndInt(int size, int min, int max)
     {
         arr[i] = rnd.Next(min, max + 1);
     }
+
     return arr;
 }
 
@@ -24,12 +21,13 @@ void PrintArray(int[] arr)
     Console.Write("[");
     for (int i = 0; i < arr.Length; i++)
     {
+        Console.Write(arr[i]);
         if (i < arr.Length - 1)
-            Console.Write($"{arr[i]}, ");
-        else Console.Write($"{arr[i]}");
+            Console.Write(", "); 
     }
-    Console.Write("]");
+    Console.WriteLine("]");
 }
+
 void InversionArray(int[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
@@ -37,5 +35,9 @@ void InversionArray(int[] arr)
         arr[i] *= -1;
     }
 }
+
 int[] array = CreateArrayRndInt(12, -9, 9);
- PrintArray(array);
+
+PrintArray(array);
+InversionArray(array);
+PrintArray(array);
