@@ -1,6 +1,11 @@
-﻿// 49: Задайте двумерный массив. Найдите элементы, у
-// которых оба индекса чётные, и замените эти элементы на их
-// квадраты.
+﻿// 51: Задайте двумерный массив. Найдите сумму
+// элементов, находящихся на главной диагонали (с индексами
+// (0,0); (1;1) и т.д.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Сумма элементов главной диагонали: 1+9+2 = 12
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
@@ -33,56 +38,23 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-void ReplaceEvenRowsColumnsSquare(int[,] matrix)
+int SumDiogonal(int[,] matrix)
 {
     int rows = matrix.GetLength(0);
     int columns = matrix.GetLength(1);
 
-    for (int i = 0; i < rows; i++)
+    int sum = 0;
+
+    for (int i = 0; i < rows && i < columns; i++)
     {
-        for (int j = 0; j < columns; j++)
-        {
-            if (i % 2 == 0 && j % 2 == 0)
-            {
-                matrix[i, j] = matrix[i, j] * matrix[i, j];
-            }
-        }
+        sum +=  matrix[i, i];
     }
+
+    return sum;
 }
 
-int[,] mat = CreateMatrixRndInt(3, 4, -100, 100);
+int[,] mat = CreateMatrixRndInt(4, 3, -100, 100);
 PrintMatrix(mat);
 
-ReplaceEvenRowsColumnsSquare(mat);
-PrintMatrix(mat);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+int sum = SumDiogonal(mat);
+Console.WriteLine(sum);
