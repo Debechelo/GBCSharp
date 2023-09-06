@@ -35,7 +35,7 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int[,] MultiplyMatrix(int[,] matrix1, int[,] matrix2)
+int[,]? MultiplyMatrix(int[,] matrix1, int[,] matrix2)
 {
     if (matrix1.GetLength(1) != matrix2.GetLength(0))
         return null;
